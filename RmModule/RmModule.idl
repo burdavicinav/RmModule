@@ -1,0 +1,47 @@
+﻿// RmModule.idl: источник языка IDL для RmModule
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+/*
+[
+	object,
+	uuid(1aa37da3-7c32-46bb-81b8-55bc449e818e),
+	pointer_default(unique)
+]
+interface IApplicationOnResourceReport : IUnknown
+{
+};
+*/
+
+// Интерфейс для запуска задачи из Дерева задач системы
+[
+	uuid(15D2A7B2-9C3D-11d2-B5D0-0000E84F2903),
+	pointer_default(unique)
+]
+interface IOmpTask : IUnknown
+{
+	// Метод для запуска задачи из Дерева задач системы
+	HRESULT Run([in] HWND parent, [out] HWND* created_wnd, [out] long* error_code);
+};
+
+[
+	uuid(95cd2de4-25d9-4230-8788-26eb7a054301),
+	version(1.0),
+]
+library RmModuleLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(e0f694af-faba-48dc-94a5-c7f484d10b97)
+	]
+	coclass ApplicationOnResourceReport
+	{
+		[default] interface IOmpTask;
+	};
+};
+
+import "shobjidl.idl";

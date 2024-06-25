@@ -1,0 +1,15 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {e0f694af-faba-48dc-94a5-c7f484d10b97} = s 'ApplicationOnResourceReport class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{95cd2de4-25d9-4230-8788-26eb7a054301}'
+			Version = s '1.0'
+		}
+	}
+}

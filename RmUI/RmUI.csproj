@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C3D62BC-88B6-4831-9060-276DA1BF6FD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RmUI</RootNamespace>
+    <AssemblyName>RmUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Reports.cs" />
+    <Compile Include="Classes\UserMessage.cs" />
+    <Compile Include="Forms\AgreeFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgreeFilterForm.Designer.cs">
+      <DependentUpon>AgreeFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationOnResourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationOnResourceForm.Designer.cs">
+      <DependentUpon>ApplicationOnResourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClaimsForMatsFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClaimsForMatsFilterForm.Designer.cs">
+      <DependentUpon>ClaimsForMatsFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClassifyFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClassifyFilterForm.Designer.cs">
+      <DependentUpon>ClassifyFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EnterpriseFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnterpriseFilterForm.Designer.cs">
+      <DependentUpon>EnterpriseFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResponsibleFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResponsibleFilterForm.Designer.cs">
+      <DependentUpon>ResponsibleFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockObjFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockObjFilterForm.Designer.cs">
+      <DependentUpon>StockObjFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ApplicationOnResourceMapCR.cs" />
+    <Compile Include="Runners\ApplicationOnResourceRunner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runners\EnterpriseFilterRunner.cs" />
+    <Compile Include="Runners\IRunner.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AgreeFilterForm.resx">
+      <DependentUpon>AgreeFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationOnResourceForm.resx">
+      <DependentUpon>ApplicationOnResourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClaimsForMatsFilterForm.resx">
+      <DependentUpon>ClaimsForMatsFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClassifyFilterForm.resx">
+      <DependentUpon>ClassifyFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnterpriseFilterForm.resx">
+      <DependentUpon>EnterpriseFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponsibleFilterForm.resx">
+      <DependentUpon>ResponsibleFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockObjFilterForm.resx">
+      <DependentUpon>StockObjFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmDatabase\RmDatabase.csproj">
+      <Project>{91b8e45c-ed26-448e-aebc-110a6734f888}</Project>
+      <Name>RmDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmLogger\RmLogger.csproj">
+      <Project>{990d2a68-61dd-4391-a361-9b10f20c0c6d}</Project>
+      <Name>RmLogger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmReports\RmReports.csproj">
+      <Project>{a1635099-eeb1-4a83-b3da-5aebbb120ff6}</Project>
+      <Name>RmReports</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="appsettings.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
